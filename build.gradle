@@ -1,0 +1,48 @@
+group 'com.wuxingliang.blog'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.springframework:spring-jdbc:$springVersion"
+    compile "org.springframework:spring-oxm:$springVersion"
+    compile "javax.servlet:jstl:$jstlVersion"
+    compile "org.apache.commons:commons-lang3:$commonsLangVersion"
+    compile "log4j:log4j:$log4jVersion"
+    compile "mysql:mysql-connector-java:$mysqlConnectorVersion"
+    compile "commons-fileupload:commons-fileupload:$commonsFileuploadVersion"
+    compile "org.slf4j:slf4j-log4j12:$slf4jVersion"
+    compile "org.mybatis:mybatis:$mybatisVersion"
+    compile "org.mybatis:mybatis-spring:$mybatisSpringVersion"
+    compile "commons-dbcp:commons-dbcp:$dbcpVersion"
+    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    compile "commons-codec:commons-codec:$commonsCodec"
+//    compile "org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1"
+
+    providedCompile "javax.servlet:javax.servlet-api:$servletApiVersion"
+    providedCompile "javax.servlet.jsp:jsp-api:$jspApiVersion"
+    providedCompile "javax.el:javax.el-api:$jspElVersion"
+
+    testCompile "junit:junit:$junitVersion"
+    testCompile "org.springframework:spring-test:$springVersion"
+
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir '/src/main/java'
+        }
+        resources {
+            srcDir '/src/main/java'
+        }
+    }
+}
